@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta http-equiv="Cache-Control"content="no-cache"/>
+    <link rel="stylesheet" href="lib/mobile-select-area.css">
+    <style>
+        body{
+            background:#000;
+        }
+        .circle{
+            width:200px;
+            height:200px;
+            margin:100px auto;
+            position:relative;
+            left:0;
+            top:0;
+            transform-style:preserve-3d;
+            animation:ait 15s  linear  infinite;
+        }
+        @keyframes ait {
+            from{transform: rotateX(0deg)  rotateY(0deg)}
+            to{transform: rotateX(360deg)  rotateY(360deg)}
+        }
+        .circle_main
+        {
+            position:absolute;
+            left:0;
+            top:0;
+            width:100px;
+            height:150px;
+            border:solid red;
+            border-width:2px 2px 0 0;
+            border-radius:50% 50% 0/40% 50% 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="circle">
+
+    </div>
+</body>
+
+<script>
+    var oDiv=document.getElementsByClassName("circle")[0];
+    var html='';
+    for(var i=0;i<36;i++){
+        html+="<div class='circle_main'  style='transform: rotateY("+10*i+"deg) rotateZ(45deg) translateX(30px);'></div>'";
+    }
+    oDiv.innerHTML=html;
+</script>
+
+</html>
